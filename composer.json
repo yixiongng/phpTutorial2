@@ -1,0 +1,7 @@
+{
+    "require": {
+        "league/plates": "^3.3",
+        "noodlehaus/dispatch": "^10.2",
+        "vlucas/phpdotenv": "^5.1"
+    }
+}
