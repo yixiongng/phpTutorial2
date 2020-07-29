@@ -1,7 +1,3 @@
-<?php
-    require('vendor/autoload.php');
-?>
-
 <html>
     <body>
         <h1>About Us</h1>
