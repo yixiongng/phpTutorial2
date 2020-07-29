@@ -1,17 +1,3 @@
-
-<?php
-    require('vendor/autoload.php');
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-
-    $websiteName =  $_ENV['websiteName'];
-
-   // $templates = new League\Plates\Engine('./templates');
-    //echo $templates->render('home');
-
-
-?>
-
 <html>
     <body>
         <h1>Welcome to <?php echo $websiteName?></h1>
