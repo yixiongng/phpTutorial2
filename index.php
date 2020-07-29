@@ -5,33 +5,31 @@
         - https://platesphp.com/ 
         - noodlehaus/dispatch
         - vlucas/phpdotenv
-
     */
-
-    //echo 'hello world';
 
     require('vendor/autoload.php');
     
     $root = '/tutorial2';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/templates');
+    $dotenv->load();
 
     route('GET', $root.'', function () {
         $templates = new League\Plates\Engine('./templates');
-        echo $templates->render('home');
-        return response('');
+        $websiteName =  $_ENV['websiteName'];
+        return response($templates->render('home',['websiteName'=>$websiteName]));
     });
 
     route('POST', $root.'/aboutUs', function () {
         $templates = new League\Plates\Engine('./templates');
-        echo $templates->render('aboutUs');
-        return response('');
+        return response($templates->render('aboutUs'));
     });
 
     route('POST', $root.'/contactUs', function () {
         $templates = new League\Plates\Engine('./templates');
-        echo $templates->render('contactUs');
-        return response('');
+        $contactPerson =  $_ENV['contactPerson'];
+        $contactNumber =  $_ENV['contactNumber'];
+        return response($templates->render('contactUs',['contactPerson'=>$contactPerson,'contactNumber'=>$contactNumber]));
     });
 
     dispatch();
-    
 ?>
