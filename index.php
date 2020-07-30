@@ -8,7 +8,7 @@
     */
 
     require('vendor/autoload.php');
-    
+
     $root = '/tutorial2';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/templates');
     $dotenv->load();
@@ -16,7 +16,8 @@
     route('GET', $root.'', function () {
         $templates = new League\Plates\Engine('./templates');
         $websiteName =  $_ENV['websiteName'];
-        return response($templates->render('home',['websiteName'=>$websiteName]));
+        $name = '';
+        return response($templates->render('home',['websiteName'=>$websiteName,'name'=>$name]));
     });
 
     route('POST', $root.'/aboutUs', function () {
@@ -31,7 +32,7 @@
         return response($templates->render('contactUs',['contactPerson'=>$contactPerson,'contactNumber'=>$contactNumber]));
     });
     
-    route('POST', $root.'/home', [HomeController::class, 'index']);
+    route('POST', $root.'/home', [\App\Controllers\HomeController::class, 'index']);
 
     dispatch();
 ?>

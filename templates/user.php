@@ -12,19 +12,15 @@
         }
 
         public function getName() {
-            echo 'Your name is '.$this->name;
-        }
-
-        public function getTest() {
-            echo 'This is a test';
+            return $this->name;
         }
 
         public function getPhoneNo() {
-            echo 'Your phone Number is '.$this->phoneNo;
+            return $this->phoneNo;
         }
         
         public function getEmail() {
-            echo 'Your email is '.$this->email;
+            return $this->email;
         }
     }
 ?>

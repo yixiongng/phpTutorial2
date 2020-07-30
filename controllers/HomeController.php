@@ -8,15 +8,16 @@
     class HomeController {
 
         public static function index() {
+            //die('abc');
 
-            $templates = new Engine(__DIR__);
+            $templates = new Engine(__DIR__.'/../templates');
             $websiteName =  $_ENV['websiteName'];
             
             if(isset($_POST['name'])) {
                 $user = new User($_POST['name'],$_POST['phoneNo'],$_POST['email']);
-                $name = $user->name;
-                $phoneNo = $user->phoneNo;
-                $email = $user->email;
+                $name = $user->getName();
+                $phoneNo = $user->getPhoneNo();
+                $email = $user->getEmail();
             } else {
                 $name = '';
                 $phoneNo = '';

@@ -23,11 +23,13 @@
             <p>Phone No.: <input type="number" name="phoneNo"></p> 
             <p>Email: <input type="email" name="email"></p> 
             <button>Submit</button>
-        </form>
-        
-        <?php echo $name;?><br/>
-        <?php echo $phoneNo;?><br/>
-        <?php echo $email;?><br/>
-        
+        </form>    
+        <?php
+            if($name != ''){
+                echo 'Your name is '.$name.'.<br/>';
+                echo 'Your phone number is '.$phoneNo.'.<br/>';
+                echo 'Your email is'.$email.'.<br/>';
+            }
+        ?>
     </body>
 </html>
