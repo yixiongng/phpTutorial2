@@ -1,4 +1,11 @@
 {
+    "name": "yixiongng/tutorial2",
+
+    "autoload": {
+        "psr-4": {
+            "App\\Controllers\\": "controllers/"
+        }
+    },
     "require": {
         "league/plates": "^3.3",
         "noodlehaus/dispatch": "^10.2",

@@ -1,11 +1,15 @@
 <?php
-    require(__DIR__.'/user.php');
+    namespace App\Controllers;
+    use User;
+    use League\Plates\Engine;
+
+    require(__DIR__.'/../templates/user.php');
 
     class HomeController {
 
         public static function index() {
 
-            $templates = new League\Plates\Engine(__DIR__);
+            $templates = new Engine(__DIR__);
             $websiteName =  $_ENV['websiteName'];
             
             if(isset($_POST['name'])) {
