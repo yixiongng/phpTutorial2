@@ -8,11 +8,6 @@
     */
 
     require('vendor/autoload.php');
-    require(__DIR__.'/templates/user.php');
-
-    if(isset($_POST['name'])) {
-        $user = new User($_POST['name'],$_POST['phoneNo'],$_POST['email']);
-    }
     
     $root = '/tutorial2';
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/templates');
@@ -36,7 +31,7 @@
         return response($templates->render('contactUs',['contactPerson'=>$contactPerson,'contactNumber'=>$contactNumber]));
     });
     
-    route('POST', $root.'/home', ['User', 'getName']);
+    route('POST', $root.'/home', [HomeController::class, 'index']);
 
     dispatch();
 ?>

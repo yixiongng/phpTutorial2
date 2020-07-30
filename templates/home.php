@@ -24,12 +24,10 @@
             <p>Email: <input type="email" name="email"></p> 
             <button>Submit</button>
         </form>
-        <?php 
-            if(isset($user->name)) {
-                call_user_func_array(['User','getName'],array());
-                echo 'Hi, '.$user->getName();
-            }
-        ?>
+        
+        <?php echo $name;?><br/>
+        <?php echo $phoneNo;?><br/>
+        <?php echo $email;?><br/>
         
     </body>
 </html>

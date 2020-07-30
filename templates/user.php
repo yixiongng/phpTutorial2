@@ -11,18 +11,20 @@
             $this->email = $email;
         }
 
-        public static function getName() {
-            echo 'Your name is '.self::$name;
+        public function getName() {
+            echo 'Your name is '.$this->name;
         }
 
-        public static function getPhoneNo() {
-            echo 'Your phone Number is '.self::$phoneNo;
-        }
-        
-        public static function getEmail() {
-            echo 'Your email is '.self::$email;
+        public function getTest() {
+            echo 'This is a test';
         }
 
+        public function getPhoneNo() {
+            echo 'Your phone Number is '.$this->phoneNo;
+        }
         
+        public function getEmail() {
+            echo 'Your email is '.$this->email;
+        }
     }
 ?>
