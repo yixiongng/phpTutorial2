@@ -1,7 +1,5 @@
 <?php
-    /*requirement
-        - create a form for user to fill in 
-    */
+
 ?>
 <html>
     <body>
@@ -26,6 +24,7 @@
         </form>    
         <?php
             if($name != ''){
+                echo $dbStatus.'.<br/>';
                 echo 'Your name is '.$name.'.<br/>';
                 echo 'Your phone number is '.$phoneNo.'.<br/>';
                 echo 'Your email is'.$email.'.<br/>';

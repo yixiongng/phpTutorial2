@@ -1,14 +1,19 @@
 <?php
+
+    /*requirement
+        - create a form for user to fill in 
+        - store details into database
+    */
     namespace App\Controllers;
     use User;
     use League\Plates\Engine;
 
     require(__DIR__.'/../templates/user.php');
+    require(__DIR__.'/dbConnection.php');
 
     class HomeController {
 
         public static function index() {
-            //die('abc');
 
             $templates = new Engine(__DIR__.'/../templates');
             $websiteName =  $_ENV['websiteName'];
@@ -18,13 +23,24 @@
                 $name = $user->getName();
                 $phoneNo = $user->getPhoneNo();
                 $email = $user->getEmail();
+
+                $conn = OpenCon();
+                $sql = "INSERT INTO userdetails (name, phoneNumber, email) VALUES ('".$name."','".$phoneNo."','".$email."')";
+                if(mysqli_query($conn, $sql)){
+                    $dbStatus =  "Records inserted successfully.";
+                } else{
+                    $dbStatus =  "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+                }
+                CloseCon($conn);
+                
             } else {
                 $name = '';
                 $phoneNo = '';
                 $email = '';
+                $dbStatus = '';
             }
             
-            return response($templates->render('home',['websiteName'=>$websiteName,'name'=>$name,'phoneNo'=>$phoneNo,'email'=>$email]));
+            return response($templates->render('home',['websiteName'=>$websiteName,'name'=>$name,'phoneNo'=>$phoneNo,'email'=>$email,'dbStatus'=>$dbStatus]));
         }
     }
 
