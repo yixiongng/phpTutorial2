@@ -10,7 +10,7 @@
     require('vendor/autoload.php');
 
     $root = '/tutorial2';
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/templates');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 
     route('GET', $root.'', function () {
