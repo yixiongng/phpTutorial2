@@ -11,7 +11,7 @@ Class OpenCon {
         $this->port = "3308";
     }
     public function conn () {
-        $conn = new mysqli($dbhost, $dbuser, $dbpass, $db, $port) or die("Connect failed: %s\n". $conn -> error);
+        $conn = new mysqli($this->dbhost, $this->dbuser, $this->dbpass, $this->db, $this->port) or die("Connect failed: %s\n". $conn -> error);
         return $conn;
     } 
     public function closeCon($conn) {

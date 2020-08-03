@@ -27,7 +27,7 @@
                 echo $dbStatus.'.<br/>';
                 echo 'Your name is '.$name.'.<br/>';
                 echo 'Your phone number is '.$phoneNo.'.<br/>';
-                echo 'Your email is'.$email.'.<br/>';
+                echo 'Your email is '.$email.'.<br/>';
             }
         ?>
     </body>
