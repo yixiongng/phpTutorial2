@@ -1,6 +1,3 @@
-<?php
-
-?>
 <html>
     <body>
         <h1>Welcome to <?php echo $websiteName?></h1>
